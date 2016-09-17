@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="customtileapp.ctrl.ComparisonChartTile"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.suite.ui.microchart">
+    <m:GenericTile
+        id="counterTile"
+        header="Distances YTD"
+        subheader="YTD by year"
+        headerImage="sap-icon://measure">
+        <m:tileContent>
+        	<m:TileContent
+        		unit="{ComparisonChartModel>/HeaderInfo/2/Unit}">
+        		<m:content>
+					<ComparisonMicroChart
+						data="{ComparisonChartModel>/Main}"
+						scale="km">
+						<data>
+							<ComparisonMicroChartData
+								title="{ComparisonChartModel>Year}"
+								value="{ComparisonChartModel>Dist_YTD}"
+								color="{ComparisonChartModel>Dist_YTD_ValueColor}" />
+						</data>
+					</ComparisonMicroChart>
+        		</m:content>
+        	</m:TileContent>
+        </m:tileContent>
+    </m:GenericTile>
+</mvc:View>

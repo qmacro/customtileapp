@@ -1,0 +1,21 @@
+<mvc:View
+    _controllerName="customtileapp.ctrl.RadialChartTile"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.suite.ui.microchart">
+    <m:GenericTile
+        header="Header"
+        subheader="Subheader"
+        headerImage="sap-icon://database">
+        <m:tileContent>
+        	<m:TileContent
+        		unit="Unit">
+        		<m:content>
+					<RadialMicroChart
+						percentage="45"
+						valueColor="Good" />
+        		</m:content>
+        	</m:TileContent>
+        </m:tileContent>
+    </m:GenericTile>
+</mvc:View>

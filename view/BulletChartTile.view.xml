@@ -1,0 +1,33 @@
+<mvc:View
+    controllerName="customtileapp.ctrl.BulletChartTile"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.suite.ui.microchart">
+    <m:GenericTile
+        binding="{BulletChartModel>/Tiles('YTD_2016')}"
+        header="Distances YTD">
+        <m:tileContent>
+        	<m:TileContent
+        		unit="km">
+        		<m:content>
+					<BulletMicroChart
+					    minValue="0"
+					    maxValue="1000"
+					    targetValue="600"
+					    forecastValue="450">
+            			<actual>
+            				<BulletMicroChartData value="{= ${BulletChartModel>number} * 1}" color="Good"/>
+            			</actual>
+            			<thresholds>
+            			    <BulletMicroChartData value="0" color="Error"/>
+            			    <BulletMicroChartData value="250" color="Error"/>
+            			    <BulletMicroChartData value="500" color="Error"/>
+            			    <BulletMicroChartData value="750" color="Error"/>
+            			    <BulletMicroChartData value="1000" color="Error"/>
+            			</thresholds>
+					</BulletMicroChart>
+        		</m:content>
+        	</m:TileContent>
+        </m:tileContent>
+    </m:GenericTile>
+</mvc:View>
